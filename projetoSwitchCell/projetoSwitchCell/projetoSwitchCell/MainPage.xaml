@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="projetoSwitchCell.MainPage">
+
+    <StackLayout>
+
+        <TableView Intent="Form">
+            <TableRoot>
+                <TableSection Title="Cadastrar Nome">
+                    <EntryCell Label="Nome " x:Name="TxtNome" 
+                               Keyboard="Text"/>
+                    <EntryCell Label="E-mail " x:Name="TxtEmail" 
+                               Keyboard="Text"/>
+                    <EntryCell x:Name="TxtCelular"
+                           Label="Celular" IsEnabled="False"
+                           Placeholder="Digite o seu celular" 
+                           Keyboard="Email"/>
+                    <SwitchCell x:Name="SwitchEnviaCelular"
+                            Text="Enviar nr do celular?"
+                            OnChanged="swt"
+                            On="False"/>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Opções de Profissão: " FontSize="20"/>
+
+            <Picker x:Name="pck1" Title="Opções de Profissão">
+                <Picker.Items>
+                    <x:String>Professor</x:String>
+                    <x:String>Médico</x:String>
+                    <x:String>Policial</x:String>
+
+                </Picker.Items>
+            </Picker>
+
+        </StackLayout>
+        <Button Text="Enviar" Clicked="Button_Clicked" />
+        <Label Text="Dados Recebidos: " x:Name="lbNome" 
+               FontSize="20" FontAttributes="Bold" 
+               BackgroundColor="Beige" />
+
+        <Button Text="Limpar" Clicked="BtLimpar" FontSize="20" FontAttributes="Bold"/>
+    </StackLayout>
+
+</ContentPage>
